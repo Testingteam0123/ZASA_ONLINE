@@ -1,0 +1,138 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import base.basePage;
+import utilities.waitHelper;
+
+public class loginPage extends basePage {
+	waitHelper wait = new waitHelper(driver);
+
+	public loginPage(WebDriver driver) {
+		super(driver);
+
+	}
+	@FindBy(xpath="//h1[text()='Welcome to School Shop'']")
+	public static WebElement welcomeHeading;
+    @FindBy(xpath="//p[text()='Your one-stop shop for school uniforms, books, and essentials.']")
+    public static WebElement message;
+    @FindBy (xpath="(//button[text()='Login'])[1]")
+    public static WebElement loginButton;
+
+    /*Signup Locators */
+    @FindBy(xpath="//div[contains(text(), 'Sign Up')]")
+    public static WebElement signUpTab;
+    @FindBy(name = "firstName")
+    public static WebElement firstNameInput;
+    @FindBy(name = "lastName")
+    public static WebElement lastNameInput;
+    @FindBy(name = "email")
+    public static WebElement signupEmailInput;
+    @FindBy(name = "password")
+    public static WebElement signupPasswordInput;
+    @FindBy(name = "confirmPassword")
+    public static WebElement confirmPasswordInput;
+    @FindBy(name = "phone")
+    public static WebElement phoneInput;
+    @FindBy(xpath = "//div[text()='Select Country']")
+    public static WebElement countryDropdown;
+    @FindBy(xpath = "//li[@class='px-4 py-2 hover:bg-gray-100 cursor-pointer']")
+    public static List<WebElement> countryList;
+  
+    @FindBy(xpath = "//div[text()='Select City']")
+    public static WebElement cityDropdown;
+    @FindBy(xpath = "//li[@class='px-4 py-2 hover:bg-gray-100 cursor-pointer']")
+    public static List<WebElement> cityList;
+    @FindBy(xpath = "//button[contains(text(),'Sign Up')]")
+    public static WebElement signUpButton;
+    @FindBy(xpath="//div[text()='Signup successfull!']")
+    public static WebElement signUpSuccessmessage;
+
+    /*
+     * Signin Locators 
+     */
+    @FindBy(xpath="(//div[text()= 'Sign in'])[1]")
+    public static WebElement signInTab;
+    @FindBy(name="signinEmail")
+    public static WebElement signinEmailInput;
+    @FindBy(name="signinPassword")
+    public static WebElement signinPasswordInput;
+    @FindBy(xpath="//button[text()='Login and Select Student']")
+    public static WebElement signinButton;
+    @FindBy(xpath="(//div[@class='w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0'])[1]")
+    public static WebElement studentRadioButton;
+    @FindBy (xpath="//button[text()='Select & Continue']")
+    public static WebElement continueButton;
+    @FindBy(xpath = "//div[text()='Signin successfull!']")
+    public static WebElement signinSuccessMessage;
+    
+//    public boolean verifyTheOnlineShoppingPageisDisplayed() {
+//    	return welcomeHeading.isDisplayed();
+//    	
+//    }
+//    
+//	public void verifyTheWelcomeMessageIsDisplayed() {
+//		message.isDisplayed();
+//	}
+//
+//	public void clickOnLoginButton() {
+//		loginButton.isDisplayed();
+//		loginButton.click();
+//	}
+//
+//	public void VerifySignUpFunctionality(String firstName, String lastName, String email, String password, String confirmPassword, String phone, String country, String city) {
+//		signUpTab.click();
+//        firstNameInput.sendKeys(firstName);
+//        lastNameInput.sendKeys(lastName);
+//        signupEmailInput.sendKeys(email);
+//        signupPasswordInput.sendKeys(password);
+//        confirmPasswordInput.sendKeys(confirmPassword);
+//        phoneInput.sendKeys(phone);
+//        countryDropdown.click();	
+//        for (WebElement countryOption : countryList) {
+//            if (countryOption.getText().equals(country)) {
+//                countryOption.click();
+//                break;
+//            }
+//        }
+//        cityDropdown.click();
+//        for (WebElement cityOption : cityList) {
+//            if (cityOption.getText().equals(city)) {
+//                cityOption.click();
+//                break;
+//            }
+//        }
+//        signUpButton.click();
+//	}
+//	public String verifySignUpSuccessMessage() {
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//		WebElement msg = wait.until(ExpectedConditions.visibilityOf(signUpSuccessmessage));
+//		return msg.getText();
+//    }
+//	public void VerifySignInFunctionality(String email, String password) {
+//		signInTab.click();
+//		signinEmailInput.sendKeys(email);
+//		signinPasswordInput.sendKeys(password);
+//		signinButton.click();
+//		wait.visibilityOf(studentRadioButton, 5);
+//		studentRadioButton.click();
+//		continueButton.click();
+//	}
+//
+//	public String verifySignInSuccessMessage() {
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//		WebElement msg = wait.until(ExpectedConditions.visibilityOf(signinSuccessMessage));
+//		return msg.getText();
+//	}
+	
+		
+	
+	
+
+}
+
+
