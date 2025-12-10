@@ -70,64 +70,7 @@ public class loginPage extends basePage {
     @FindBy(xpath = "//div[text()='Signin successfull!']")
     public static WebElement signinSuccessMessage;
     
-//    public boolean verifyTheOnlineShoppingPageisDisplayed() {
-//    	return welcomeHeading.isDisplayed();
-//    	
-//    }
-//    
-//	public void verifyTheWelcomeMessageIsDisplayed() {
-//		message.isDisplayed();
-//	}
-//
-//	public void clickOnLoginButton() {
-//		loginButton.isDisplayed();
-//		loginButton.click();
-//	}
-//
-//	public void VerifySignUpFunctionality(String firstName, String lastName, String email, String password, String confirmPassword, String phone, String country, String city) {
-//		signUpTab.click();
-//        firstNameInput.sendKeys(firstName);
-//        lastNameInput.sendKeys(lastName);
-//        signupEmailInput.sendKeys(email);
-//        signupPasswordInput.sendKeys(password);
-//        confirmPasswordInput.sendKeys(confirmPassword);
-//        phoneInput.sendKeys(phone);
-//        countryDropdown.click();	
-//        for (WebElement countryOption : countryList) {
-//            if (countryOption.getText().equals(country)) {
-//                countryOption.click();
-//                break;
-//            }
-//        }
-//        cityDropdown.click();
-//        for (WebElement cityOption : cityList) {
-//            if (cityOption.getText().equals(city)) {
-//                cityOption.click();
-//                break;
-//            }
-//        }
-//        signUpButton.click();
-//	}
-//	public String verifySignUpSuccessMessage() {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//		WebElement msg = wait.until(ExpectedConditions.visibilityOf(signUpSuccessmessage));
-//		return msg.getText();
-//    }
-//	public void VerifySignInFunctionality(String email, String password) {
-//		signInTab.click();
-//		signinEmailInput.sendKeys(email);
-//		signinPasswordInput.sendKeys(password);
-//		signinButton.click();
-//		wait.visibilityOf(studentRadioButton, 5);
-//		studentRadioButton.click();
-//		continueButton.click();
-//	}
-//
-//	public String verifySignInSuccessMessage() {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//		WebElement msg = wait.until(ExpectedConditions.visibilityOf(signinSuccessMessage));
-//		return msg.getText();
-//	}
+
 	
 		
 	
