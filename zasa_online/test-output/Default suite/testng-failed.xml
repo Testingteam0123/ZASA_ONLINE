@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="base.baseTest">
+      <class name="tests.footerTests">
         <methods>
           <include name="setup"/>
+          <include name="verifyTheFooterCreateAccountSectionDetails"/>
+          <include name="verifyTheFooterOurStoresSectionDetails"/>
+          <include name="verifyTheFooterOrderTrackingSectionDetails"/>
+          <include name="verifyTheFooterSignInSectionDetails"/>
         </methods>
-      </class> <!-- base.baseTest -->
+      </class> <!-- tests.footerTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

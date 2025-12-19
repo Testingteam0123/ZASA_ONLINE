@@ -1,7 +1,6 @@
 package base;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -9,6 +8,7 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,34 +18,29 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
-import pages.loginPage;
 
 
 public class baseTest {
 	public  WebDriver driver;
-	//protected Properties p;
-	public static FileInputStream stream;
-	public  static Properties p;
+	protected Properties p;
 	
 	@BeforeClass
 	
 	public void setup() throws IOException {
-		
-		stream = new FileInputStream("config.properties");
-        p = new Properties();
-        p.load(stream);
+		p = new Properties();
+		FileReader file = new FileReader(
+				System.getProperty("user.dir") + "/config.properties");
+		p.load(file);
 
 		String browser = p.getProperty("browser");
 		String url = p.getProperty("url");
-		System.out.println(browser+"äaaaaaaaaaa");
-		System.out.println(url+"äaaaaaaaaaa");
 
 		if (browser.equals("chrome")) {
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--incognito");
+			//options.addArguments("--incognito");
 			driver = new ChromeDriver(options);
+			
 		} else if (browser.equals("edge")) {
 			driver = new EdgeDriver();
 		} else if (browser.equals("firefox")) {
@@ -54,7 +49,10 @@ public class baseTest {
 			System.out.println("Invalid browser");
 		}
 
+		
 		driver.get(url);
+//		((JavascriptExecutor) driver)
+//        .executeScript("document.body.style.zoom='80%'");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		

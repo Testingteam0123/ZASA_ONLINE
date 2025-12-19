@@ -18,7 +18,7 @@ private static ExtentReports extent;
 		
 		extent= new ExtentReports();
 		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "Reneeja X");
+		extent.setSystemInfo("Tester", "Aromal J C");
 		extent.setSystemInfo("Browser", "Chrome");
 		extent.setSystemInfo("Enviroment", "QA");
 	
