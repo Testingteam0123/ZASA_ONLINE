@@ -2,6 +2,7 @@ package utilities;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,6 +49,13 @@ private  WebDriver driver;
 	public void scrollToElement(WebElement element) {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+	}
+	
+	public void waitForOverlayToDisappear() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(
+	        By.xpath("//button[@aria-haspopup='dialog']")
+	    ));
 	}
 
 }

@@ -1,5 +1,6 @@
 package tests;
 	
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -22,6 +23,7 @@ public class loginTest extends baseTest {
     @Test(priority = 1)
     public void verifyLaunch() throws Exception {
        ExtentTest test= ExtentTestListener.getTest();
+       loginPage lp= new loginPage(driver);
         try {
         	test.info("Check the title of the page");
         String expectedTitle = "BM Store";
@@ -32,6 +34,12 @@ public class loginTest extends baseTest {
         }else {
             test.fail("Title did not match. Expected: " + expectedTitle + ", but got: " + actualTitle);
         }
+        
+        String actualHeading = lp.getHeading();
+		Assert.assertEquals(actualHeading, "Welcome to ZASA Store");
+		test.pass("Welcome to ZASA Store heading showing properly");
+        
+        
         }
         catch(Exception e)
         {
