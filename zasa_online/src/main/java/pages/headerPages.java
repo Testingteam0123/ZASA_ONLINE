@@ -35,7 +35,7 @@ public class headerPages extends basePage {
 	@FindBy(xpath = "//input[@name='rememberMe']")
 	private WebElement rememberBtn;
 
-	@FindBy(xpath = "(//div[contains(@class,'w-4 h-4')])[1]")
+	@FindBy(xpath = "(//div[contains(@class,'w-4 h-4')])[2]")
 	private WebElement selectStudentBtn;
 
 	@FindBy(xpath = "//button[text()='Select & Continue']")

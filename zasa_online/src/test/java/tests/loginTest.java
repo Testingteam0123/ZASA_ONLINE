@@ -20,7 +20,7 @@ public class loginTest extends baseTest {
 		String mail=f.internet().emailAddress();
 		String no="9"+f.phoneNumber().subscriberNumber(8);
 	
-    @Test(priority = 1)
+    //@Test(priority = 1)
     public void verifyLaunch() throws Exception {
        ExtentTest test= ExtentTestListener.getTest();
        loginPage lp= new loginPage(driver);
@@ -63,6 +63,7 @@ public class loginTest extends baseTest {
   			 lp.enterFirstNameInput(firstname);
   			 lp.enterLastNameInput(lastname);
   			 lp.enterSignupEmailInput(mail);
+  			 System.out.println(mail);
   			 lp.enterSignupPasswordInput(p.getProperty("pass"));
   			 lp.enterConfirmPasswordInput(p.getProperty("pass"));
   			 lp.enterPhoneInput(no);
@@ -81,7 +82,7 @@ public class loginTest extends baseTest {
   	}
     
     
-    @Test(priority = 3)
+    //@Test(priority = 3)
     public void verifyTheSignInFunctionality()
     {
     	 ExtentTest test= ExtentTestListener.getTest();

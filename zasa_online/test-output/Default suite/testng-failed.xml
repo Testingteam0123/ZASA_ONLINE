@@ -5,8 +5,8 @@
     <classes>
       <class name="tests.headerTests">
         <methods>
+          <include name="verifyTheAddToCartFunctionWithNoProduct"/>
           <include name="setup"/>
-          <include name="verifyTheAddToCartFunctionWithProductAdded"/>
         </methods>
       </class> <!-- tests.headerTests -->
     </classes>
